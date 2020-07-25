@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { get } from "../Helpers";
 import { Card, Avatar, BackTop } from "antd";
+import { EllipsisOutlined } from "@ant-design/icons";
+
 import PriceCounter from "./PriceCounter";
 import Header from "../PositionsComponents/Header";
 
@@ -92,9 +94,16 @@ export default function SearchResults(props) {
       <Header returnFunc={props.returnFunc}></Header>
       {results()}
       {profiles.length < stocks.length ? (
-        <div onClick={nextCards} style={{ textAlign: "center" }}>
-          More
-        </div>
+        <a
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "5vh",
+            marginBottom: "5vh",
+          }}
+        >
+          <Avatar size={64} icon={<EllipsisOutlined />} onClick={nextCards} />
+        </a>
       ) : null}
     </div>
   );

@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { LoginOutlined } from "@ant-design/icons";
 import React from "react";
 import { withRouter } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function AntButton(props) {
     <Button
       type="primary"
       shape="circle"
-      icon={<ArrowRightOutlined />}
+      icon={<LoginOutlined />}
       onClick={props.click}
       loading={props.loading}
     ></Button>
