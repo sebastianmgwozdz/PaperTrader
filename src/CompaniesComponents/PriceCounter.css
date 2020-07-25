@@ -1,0 +1,51 @@
+.flashGreen {
+  -webkit-animation-name: flash-animation-green;
+  -webkit-animation-duration: 2s;
+
+  animation-name: flash-animation-green;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes flash-animation-green {
+  from {
+    color: #3f8600;
+  }
+  to {
+    color: default;
+  }
+}
+
+@keyframes flash-animation-green {
+  from {
+    color: #3f8600;
+  }
+  to {
+    color: default;
+  }
+}
+
+.flashRed {
+  -webkit-animation-name: flash-animation-red;
+  -webkit-animation-duration: 2s;
+
+  animation-name: flash-animation-red;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes flash-animation-red {
+  from {
+    color: #f55936;
+  }
+  to {
+    color: default;
+  }
+}
+
+@keyframes flash-animation-red {
+  from {
+    color: #f55936;
+  }
+  to {
+    color: default;
+  }
+}
