@@ -12,3 +12,4 @@ Stock Market Paper Trader is a platform for users to track and trade stocks acco
 
 * Tools Used: JavaScript, Java, Spring Boot, React, MySQL, Firebase Authentication
 
+![Paper-Trader-Demo](demo/PaperTrader.gif)
