@@ -1,15 +1,13 @@
 # PaperTrader
 
-Stock Market Paper Trader is a platform for users to track and trade stocks according to real market value
+Stock Market Paper Trader is a platform for users to track and trade stocks according to market value
 
-* Simulates brokerage account with initial $100,000 balance, displays stock movements graphically in real time, and records profits for long and short positions
+* Simulates account with initial $100,000 balance, displays stock movements graphically in real time, and records profits for long and short positions
 
-* Allows user to search individual stocks, providing information ranging from related news to company financials
+* Allows user to search individual stocks, providing information ranging from financials to related news
 
-* Compiles all company earnings for the upcoming week
+* Compiles earnings calendar for upcoming week
 
-* Retrieves real time stock data from Finnhub Stock API and user's positions from MySQL database through RESTful Spring Boot API
-
-* Tools Used: JavaScript, Java, Spring Boot, React, MySQL, Firebase Authentication
+* Tools Used: JavaScript, Java, Spring Boot, React, MySQL
 
 ![Paper-Trader-Demo](demo/PaperTrader.gif)
