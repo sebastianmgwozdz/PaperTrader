@@ -11,9 +11,13 @@ export default function Graph(props) {
 
   useEffect(() => {
     if (!isNaN(props.dataPoint) && isOpen(new Date())) {
-      data.push({
-        val: props.dataPoint,
-      });
+      setData([
+        ...data,
+        {
+          val: props.dataPoint,
+          x: data.length,
+        },
+      ]);
     } else if (props.data) {
       setData(props.data);
     }
@@ -27,7 +31,7 @@ export default function Graph(props) {
     let min = Math.min.apply(Math, incl);
     let max = Math.max.apply(Math, incl);
 
-    let diff = max - min;
+    let diff = Math.abs(max - min);
 
     return [min - diff / 4, max + diff / 4];
   }
@@ -47,6 +51,8 @@ export default function Graph(props) {
     return null;
   }
 
+  console.log(data);
+
   let color;
   let diff = data[data.length - 1]["val"] - props.reference;
 
@@ -58,7 +64,7 @@ export default function Graph(props) {
 
   let domain = minMax();
 
-  return (
+  return props.reference ? (
     <AreaChart
       width={props.width ? props.width : 350}
       height={props.height ? props.height : 155}
@@ -79,6 +85,32 @@ export default function Graph(props) {
       ></YAxis>
 
       <ReferenceLine y={props.reference} strokeDasharray="3 3" />
+
+      <Area
+        type="monotone"
+        dataKey="val"
+        stroke={color}
+        dot={false}
+        isAnimationActive={false}
+        strokeWidth={props.strokeWidth}
+        fillOpacity={1}
+        fill={"url(#color" + props.ticker + ")"}
+      />
+    </AreaChart>
+  ) : (
+    <AreaChart
+      width={props.width ? props.width : 350}
+      height={props.height ? props.height : 155}
+      data={data}
+      margin={{ top: 15, left: 25, right: 25, bottom: 10 }}
+    >
+      <defs>
+        <linearGradient id={"color" + props.ticker} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor={color} stopOpacity={0.4} />
+          <stop offset="95%" stopColor={color} stopOpacity={0} />
+        </linearGradient>
+      </defs>
+
       <Area
         type="monotone"
         dataKey="val"

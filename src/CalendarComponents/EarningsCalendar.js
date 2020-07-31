@@ -10,7 +10,7 @@ export default function EarningsCalendar() {
 
   useEffect(() => {
     let start = Date.now();
-    let end = start + 2628000000;
+    let end = start + 604800000;
 
     let startForm = new Date(start).toISOString().substring(0, 10);
     let endForm = new Date(end).toISOString().substring(0, 10);

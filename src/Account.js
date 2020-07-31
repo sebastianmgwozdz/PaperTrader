@@ -45,13 +45,13 @@ function Account(props) {
   }
 
   return (
-    <div style={{ paddingTop: "20vh" }}>
-      <div style={{ paddingLeft: "25vw", marginBottom: "10vh" }}>
+    <div style={{ paddingTop: "25vh", paddingLeft: "30vw" }}>
+      <div style={{ marginBottom: "10vh" }}>
         <Button type="primary" shape="round" onClick={reset} style={btnStyle}>
           Reset Account
         </Button>
       </div>
-      <div style={{ paddingLeft: "25vw" }}>
+      <div>
         <Button type="primary" shape="round" onClick={signout} style={btnStyle}>
           Sign Out
         </Button>
